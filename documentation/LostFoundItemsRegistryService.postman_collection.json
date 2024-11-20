@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "448a2284-6f51-40f9-840f-eace9c97feec",
+		"name": "LostFoundItemsRegistryService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1769870"
+	},
+	"item": [
+		{
+			"name": "uploadData",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "kogul",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "kogul",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "lostItemsFile",
+							"type": "file",
+							"src": "/Users/kogulthiyagarajan/Documents/RaboBank-Assignment/ItemDetailsInfo.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8082/lostItemsRegistryService/v1/admin/uploadData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"lostItemsRegistryService",
+						"v1",
+						"admin",
+						"uploadData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "claimLostItems",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "sandhya",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "sandhya",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "lostItemsFile",
+							"type": "file",
+							"src": "/Users/kogulthiyagarajan/Documents/RaboBank-Assignment/ItemDetailsInfo.csv",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8082/lostItemsRegistryService/v1/user/claimItems?itemName=Jewellery&place=Airport&userId=U1005&claimQuantity=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"lostItemsRegistryService",
+						"v1",
+						"user",
+						"claimItems"
+					],
+					"query": [
+						{
+							"key": "itemName",
+							"value": "Jewellery"
+						},
+						{
+							"key": "place",
+							"value": "Airport"
+						},
+						{
+							"key": "userId",
+							"value": "U1005"
+						},
+						{
+							"key": "claimQuantity",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "retrieveLostItemsDetails",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "sandhya",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "sandhya",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/lostItemsRegistryService/v1/user/retrieveLostItemsDetails?page=0&size=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"lostItemsRegistryService",
+						"v1",
+						"user",
+						"retrieveLostItemsDetails"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "retrieveClaimedItemsDetails",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "kogul",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "kogul",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/lostItemsRegistryService/v1/admin/retrieveClaimedItemsDetails?page=0&size=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"lostItemsRegistryService",
+						"v1",
+						"admin",
+						"retrieveClaimedItemsDetails"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"sandhya\",\n    \"password\":\"sandhya\",\n    \"roles\":[\"ROLE_ADMIN\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/user/createUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"user",
+						"createUser"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

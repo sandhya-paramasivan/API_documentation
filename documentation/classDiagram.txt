@@ -1,0 +1,21 @@
++-------------------+           +-------------------+           +-------------------+
+| LostItemsDetails  |<>--------|   UserDetails     |<>--------|      Address       |
++-------------------+           +-------------------+           +-------------------+
+| - id : String     |           | - userId : String |           | - houseNumber : String |
+| - itemName : String |          | - username : String |         | - street : String       |
+| - quantity : int   |           | - claimedQuantity : int |     | - city : String         |
+| - place : String   |           | - address : Address  |       | - zipCode : String      |
+| - status : StatusEnum |         +-------------------+         +-------------------+
+| - userDetailsList : List<UserDetails> |
++-------------------+
+        |
+        | (Association)
+        v
++-------------------+
+|       User        |
++-------------------+
+| - id : String     |
+| - username : String |
+| - password : String |
+| - roles : List<String> |
++-------------------+

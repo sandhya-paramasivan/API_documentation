@@ -1,0 +1,36 @@
+{
+	"info": {
+		"_postman_id": "e27af073-a90a-43c6-a177-640beb5ee569",
+		"name": "UserDetailsService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1769870"
+	},
+	"item": [
+		{
+			"name": "retrieveUserDetailsService",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/userDetailsService/v1?userId=1008",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"userDetailsService",
+						"v1"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1008"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
